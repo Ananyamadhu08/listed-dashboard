@@ -18,6 +18,7 @@
     "no-unused-vars": "off",
     "react/prop-types": "off",
     "jsx-a11y/anchor-is-valid": "off",
-    "object-curly-newline": "off"
+    "object-curly-newline": "off",
+    "jsx-a11y/img-redundant-alt": "off"
   }
 }

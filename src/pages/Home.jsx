@@ -1,5 +1,5 @@
 import React from 'react';
-import { Sidebar } from '../components';
+import { Header, Sidebar } from '../components';
 
 function Home() {
   return (
@@ -7,7 +7,7 @@ function Home() {
       <Sidebar />
 
       <div className="row-span-5 xl:row-span-6 col-span-8 xl:col-span-6">
-        Left Section
+        <Header />
       </div>
     </div>
   );
