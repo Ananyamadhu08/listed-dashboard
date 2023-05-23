@@ -13,6 +13,9 @@
   "rules": {
     "react/react-in-jsx-scope": "off",
     "react/jsx-filename-extension": "off",
-    "comma-dangle": "off"
+    "comma-dangle": "off",
+    "jsx-a11y/label-has-associated-control": "off",
+    "no-unused-vars": "off",
+    "react/prop-types": "off"
   }
 }
