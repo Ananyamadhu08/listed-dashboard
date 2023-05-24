@@ -2,12 +2,17 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
 import { auth, provider } from '../firebaseConfig';
+import { AppleIcon, GoogleIcon } from '../assets';
+import { useAuth } from '../context/providers/AuthProvider';
+import { authActions } from '../context/constants/AuthConstants';
 
 function LoginForm({ setFormType }) {
   const [userDetails, setUserDetails] = useState({
     email: '',
     password: '',
   });
+
+  const { authDispatch } = useAuth();
 
   const navigate = useNavigate();
 
@@ -20,6 +25,13 @@ function LoginForm({ setFormType }) {
   const handleGoogleSignIn = () => {
     signInWithPopup(auth, provider).then((data) => {
       localStorage.setItem('listed-TOKEN', data.user.email);
+
+      authDispatch({
+        type: authActions.LOGIN_SUCCESS,
+        payload: { user: {}, loggedInUser: data.user.email },
+      });
+
+      navigate('/');
     });
   };
 
@@ -29,6 +41,11 @@ function LoginForm({ setFormType }) {
         // Signed in
 
         localStorage.setItem('listed-TOKEN', data.user.email);
+
+        authDispatch({
+          type: authActions.LOGIN_SUCCESS,
+          payload: { user: {}, loggedInUser: data.user.email },
+        });
 
         navigate('/');
       })
@@ -49,16 +66,21 @@ function LoginForm({ setFormType }) {
         <button
           onClick={handleGoogleSignIn}
           type="button"
-          className="bg-white py-2 px-5 rounded-[0.625rem]"
+          className="bg-white py-2 px-5 rounded-[0.625rem] flex items-center text-[#858585]"
         >
+          <img src={GoogleIcon} alt="" className="mr-2.5 w-3.5 h-3.5 " />
           Sign in with Google
         </button>
-        <button type="button" className="bg-white py-2 px-5 rounded-[0.625rem]">
+        <button
+          type="button"
+          className="bg-white py-2 px-5 rounded-[0.625rem] flex items-center text-[#858585]"
+        >
+          <img src={AppleIcon} alt="" className="mr-2.5 w-3.5 h-3.5 " />
           Sign in with Apple
         </button>
       </div>
 
-      <div className="bg-white rounded-[0.625rem] p-8">
+      <div className="bg-white rounded-[1.25rem] p-8">
         <div className="flex flex-col mb-5">
           <label className="font-lato text-base mb-2.5">Email address</label>
           <input

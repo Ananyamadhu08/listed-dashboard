@@ -2,9 +2,12 @@ import { useNavigate } from 'react-router-dom';
 import { signOut } from 'firebase/auth';
 import { BellIcon, SearchIcon, UserImage } from '../assets';
 import { auth } from '../firebaseConfig';
+import { authActions } from '../context/constants/AuthConstants';
+import { useAuth } from '../context/providers/AuthProvider';
 
 function Header() {
   const navigate = useNavigate();
+  const { authDispatch } = useAuth();
 
   return (
     <div className="flex justify-between align-center xl:mt-10 mx-1">
@@ -29,8 +32,12 @@ function Header() {
         <img
           onClick={() => {
             signOut(auth);
-            navigate('/');
             localStorage.removeItem('listed-TOKEN');
+
+            authDispatch({
+              type: authActions.LOGOUT_SUCCESS,
+            });
+            navigate('/');
           }}
           src={UserImage}
           alt="user image"

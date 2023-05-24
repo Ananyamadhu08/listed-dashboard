@@ -9,8 +9,6 @@ export const authReducer = (state, action) => {
       return { ...state, error: action.payload, loading: false };
 
     case authActions.LOGIN_SUCCESS:
-      console.log(action.payload.loggedInUser);
-
       return {
         ...state,
         user: action.payload,
@@ -21,13 +19,14 @@ export const authReducer = (state, action) => {
     case authActions.SIGNUP_SUCCESS:
       return {
         ...state,
-        user: action.payload.createdUser,
+        user: action.payload,
         loading: false,
-        encodedToken: action.payload.encodedToken,
+        loggedInUser: action.payload.loggedInUser,
       };
 
     case authActions.LOGOUT_SUCCESS:
-      window.localStorage.removeItem('mediaHive_JWT_Token');
+      window.localStorage.removeItem('listed-TOKEN');
+
       return {
         ...state,
         user: {},
