@@ -18,10 +18,10 @@ function ScheduleCardsContainer() {
       </div>
 
       <div className="flex flex-col gap-4">
-        {appDataState?.data?.todaysSchedule?.map((item) => (
+        {appDataState?.data?.todaysSchedule?.map((item, index) => (
           <ScheduleCard
             key={item.id}
-            borderColor="border-[#9BDD7C]"
+            borderColor={index === 0 ? 'border-[#9BDD7C]' : 'border-[#6972C3]'}
             title={item.title}
             time={item.time}
             location={item.location}
