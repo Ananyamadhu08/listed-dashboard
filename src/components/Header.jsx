@@ -27,7 +27,7 @@ function Header() {
           onClick={() => signOut(auth)}
           src={UserImage}
           alt="user image"
-          className="rounded-full"
+          className="rounded-full cursor-pointer"
         />
       </div>
     </div>
