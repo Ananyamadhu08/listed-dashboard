@@ -11,6 +11,7 @@ import TotalTransactionsIcon from './total_transactions_icon.svg';
 import TotalLikesIcon from './total_likes_icon.svg';
 import TotalUsersIcon from './total_users_icon.svg';
 import RightArrowIcon from './right_arrow_icon.svg';
+import DownArrowIcon from './down_arrow_icon.svg';
 
 export {
   DashboardIcon,
@@ -26,4 +27,5 @@ export {
   TotalLikesIcon,
   TotalUsersIcon,
   RightArrowIcon,
+  DownArrowIcon,
 };
