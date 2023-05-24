@@ -7,7 +7,7 @@ function ScheduleCardsContainer() {
       <div className="flex justify-between items-center py-5">
         <p className="text-lg font-bold">Today&apos;s schedule</p>
         <div className="text-xs text-[#858585]">
-          <button type="button" className="flex gap-2">
+          <button type="button" className="flex items-center gap-2">
             See all
             <img src={RightArrowIcon} alt="right arrow icon" />
           </button>
