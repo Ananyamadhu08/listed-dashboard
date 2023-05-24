@@ -1,7 +1,7 @@
 function DashboardCard({ bgColor, imgSrc, title, value }) {
   return (
     <div
-      className={`pb-6 pl-6 pr-[4.5rem] rounded-[1.25rem] relative m-4 col-span-4 sm:col-span-2 xl:col-span-1 ${bgColor}`}
+      className={`pb-6 pl-6 pr-[4.5rem] rounded-[1.25rem] relative my-4 col-span-4 sm:col-span-2 xl:col-span-1 ${bgColor}`}
     >
       <img
         src={imgSrc}
