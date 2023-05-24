@@ -16,7 +16,7 @@ function Sidebar() {
       <div className="flex xl:flex-col gap-8 md:gap-16 xl:gap-10">
         <div className="flex gap-5 xl:text-lg">
           <img src={DashboardIcon} alt="dashboard icon" />
-          <a className="hidden xl:block">Dashboard</a>
+          <a className="hidden xl:block font-bold">Dashboard</a>
         </div>
 
         <div className="flex gap-5 text-lg">

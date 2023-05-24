@@ -1,6 +1,7 @@
 import React from 'react';
 import { Chart } from 'react-google-charts';
 import { DownArrowIcon } from '../assets';
+import { useAppData } from '../context/providers/AppDataProvider';
 
 export const data = [
   ['Task', 'Hours per Day'],
@@ -16,6 +17,8 @@ export const options = {
 };
 
 function TopProductsPieChart() {
+  const { appDataState } = useAppData();
+
   return (
     <div className="bg-white col-span-2 sm:col-span-1 rounded-[1.25rem] overflow-hidden">
       <div className="flex justify-between items-center pt-5 px-7">
@@ -23,7 +26,9 @@ function TopProductsPieChart() {
           <p className="text-lg font-bold">Top Products</p>
         </div>
         <div className="text-sm font-lato flex gap-2 items-center">
-          <p className="text-xs text-[#858585]">May - June 2021</p>
+          <p className="text-xs text-[#858585]">
+            {appDataState?.data?.topProducts?.timeline}
+          </p>
           <button type="button">
             <img src={DownArrowIcon} alt="down arrow icon" />
           </button>
@@ -32,8 +37,8 @@ function TopProductsPieChart() {
       <div className="flex items-center justify-center gap-10">
         <Chart
           chartType="PieChart"
-          data={data}
-          options={options}
+          data={appDataState?.data?.topProducts?.pieChartData}
+          options={appDataState?.data?.topProducts?.pieChartDataOptions}
           width="180px"
           height="180px"
         />
@@ -47,7 +52,6 @@ function TopProductsPieChart() {
             <p className="ml-5 text-xs text-[#858585]">55%</p>
           </div>
 
-          {/*  */}
           <div>
             <div className="flex items-center gap-2 text-sm">
               <span className="bg-green-500 h-1 w-1 p-[0.3rem] rounded-full" />
@@ -55,6 +59,7 @@ function TopProductsPieChart() {
             </div>
             <p className="ml-5 text-xs text-[#858585]">31%</p>
           </div>
+
           <div>
             <div className="flex items-center gap-2 text-sm">
               <span className="bg-green-500 h-1 w-1 p-[0.3rem] rounded-full" />

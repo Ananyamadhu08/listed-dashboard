@@ -12,8 +12,11 @@ import {
   TotalTransactionsIcon,
   TotalUsersIcon,
 } from '../assets';
+import { useAppData } from '../context/providers/AppDataProvider';
 
 function Home() {
+  const { appDataState } = useAppData();
+
   return (
     <div className="grid grid-cols-9">
       <Sidebar />
@@ -26,28 +29,28 @@ function Home() {
             bgColor="bg-[#DDEFE0]"
             imgSrc={TotalRevenueIcon}
             title="Total Revenues"
-            value="$2,129,430"
+            value={appDataState?.data?.totalRevenues}
           />
 
           <DashboardCard
             bgColor="bg-[#F4ECDD]"
             imgSrc={TotalTransactionsIcon}
             title="Total Transactions"
-            value="1,520"
+            value={appDataState?.data?.totalTransaction}
           />
 
           <DashboardCard
             bgColor="bg-[#EFDADA]"
             imgSrc={TotalLikesIcon}
             title="Total Likes"
-            value="9,721"
+            value={appDataState?.data?.totalLikes}
           />
 
           <DashboardCard
             bgColor="bg-[#DEE0EF]"
             imgSrc={TotalUsersIcon}
             title="Total Users"
-            value="892"
+            value={appDataState?.data?.totalUsers}
           />
         </div>
 

@@ -1,7 +1,10 @@
 import { RightArrowIcon } from '../assets';
+import { useAppData } from '../context/providers/AppDataProvider';
 import ScheduleCard from './ScheduleCard';
 
 function ScheduleCardsContainer() {
+  const { appDataState } = useAppData();
+
   return (
     <div className="bg-white col-span-2 sm:col-span-1 pl-10 pr-8 rounded-[1.25rem] pb-6">
       <div className="flex justify-between items-center py-5">
@@ -15,19 +18,15 @@ function ScheduleCardsContainer() {
       </div>
 
       <div className="flex flex-col gap-4">
-        <ScheduleCard
-          borderColor="border-[#9BDD7C]"
-          title=" Meeting with suppliers from Kuta Bali"
-          time="14.00-15.00"
-          location="at Sunset Road, Kuta, Bali"
-        />
-
-        <ScheduleCard
-          borderColor="border-[#6972C3]"
-          title="Check operation at Giga Factory 1"
-          time="18.00-20.00"
-          location="at Central Jakarta"
-        />
+        {appDataState?.data?.todaysSchedule?.map((item) => (
+          <ScheduleCard
+            key={item.id}
+            borderColor="border-[#9BDD7C]"
+            title={item.title}
+            time={item.time}
+            location={item.location}
+          />
+        ))}
       </div>
     </div>
   );
