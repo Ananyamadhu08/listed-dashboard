@@ -8,7 +8,7 @@ import {
 
 function Sidebar() {
   return (
-    <div className="bg-black row-span-1 xl:row-span-6 col-span-9 h-2/4 xl:col-span-2 w-[97%] xl:w-[84%] xl:h-[94%] m-auto xl:mx-6 text-white rounded-[1.875rem] p-8 xl:py-[3.75rem] xl:px-[3.125rem] justify-center flex sm:justify-between items-center xl:block relative">
+    <div className="bg-black row-span-1 xl:row-span-6 col-span-9 h-[30%] xl:col-span-2 w-[97%] xl:w-[84%] xl:h-[94vh] mx-auto mt-8 xl:mx-6 text-white rounded-[1.875rem] p-8 xl:py-[3.75rem] xl:px-[3.125rem] justify-center flex sm:justify-between items-center xl:block relative">
       <h2 className="hidden sm:flex sm:mr-20 justify-center items-center xl:block font-bold text-3xl xl:text-4xl xl:mb-[3.75rem]">
         Board.
       </h2>

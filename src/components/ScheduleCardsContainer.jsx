@@ -3,7 +3,7 @@ import ScheduleCard from './ScheduleCard';
 
 function ScheduleCardsContainer() {
   return (
-    <div className="bg-white col-span-2 sm:col-span-1 pl-10 pr-8 rounded-[1.25rem]">
+    <div className="bg-white col-span-2 sm:col-span-1 pl-10 pr-8 rounded-[1.25rem] pb-6">
       <div className="flex justify-between items-center py-5">
         <p className="text-lg font-bold">Today&apos;s schedule</p>
         <div className="text-xs text-[#858585]">
