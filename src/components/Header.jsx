@@ -1,6 +1,11 @@
+import { useNavigate } from 'react-router-dom';
+import { signOut } from 'firebase/auth';
 import { BellIcon, SearchIcon, UserImage } from '../assets';
+import { auth } from '../firebaseConfig';
 
 function Header() {
+  const navigate = useNavigate();
+
   return (
     <div className="flex justify-between align-center xl:mt-10 mx-1">
       <h2 className="hidden sm:block text-2xl font-bold">Dashboard</h2>
@@ -21,7 +26,16 @@ function Header() {
           <img src={BellIcon} alt="bell icon" />
         </button>
 
-        <img src={UserImage} alt="user image" className="rounded-full" />
+        <img
+          onClick={() => {
+            signOut(auth);
+            navigate('/');
+            localStorage.removeItem('listed-TOKEN');
+          }}
+          src={UserImage}
+          alt="user image"
+          className="rounded-full cursor-pointer"
+        />
       </div>
     </div>
   );
