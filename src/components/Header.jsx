@@ -2,7 +2,7 @@ import { BellIcon, SearchIcon, UserImage } from '../assets';
 
 function Header() {
   return (
-    <div className="flex justify-between align-center xl:mt-10 mx-7">
+    <div className="flex justify-between align-center xl:mt-10 mx-1">
       <h2 className="hidden sm:block text-2xl font-bold">Dashboard</h2>
       <div className="flex gap-3 xs:gap-5">
         <div className="flex">
