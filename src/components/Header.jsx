@@ -1,11 +1,10 @@
-import React from 'react';
 import { BellIcon, SearchIcon, UserImage } from '../assets';
 
 function Header() {
   return (
-    <div className="flex justify-between align-center xl:my-[3.125rem] mx-11">
+    <div className="flex justify-between align-center xl:mt-10 mx-7">
       <h2 className="hidden sm:block text-2xl font-bold">Dashboard</h2>
-      <div className="flex gap-4 xs:gap-6">
+      <div className="flex gap-3 xs:gap-5">
         <div className="flex">
           <input
             placeholder="Search..."
