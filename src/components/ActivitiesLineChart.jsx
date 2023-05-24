@@ -5,8 +5,6 @@ import { useAppData } from '../context/providers/AppDataProvider';
 function ActivitiesLineChart() {
   const { appDataState } = useAppData();
 
-  console.log(appDataState?.data?.activities?.lineChartDataOptions);
-
   return (
     <div className="bg-white mt-3 mb-5 rounded-[1.25rem] overflow-hidden">
       <div className="flex justify-between items-center pt-4 px-7">
