@@ -1,4 +1,6 @@
+import { signOut } from 'firebase/auth';
 import { BellIcon, SearchIcon, UserImage } from '../assets';
+import { auth } from '../firebaseConfig';
 
 function Header() {
   return (
@@ -21,7 +23,12 @@ function Header() {
           <img src={BellIcon} alt="bell icon" />
         </button>
 
-        <img src={UserImage} alt="user image" className="rounded-full" />
+        <img
+          onClick={() => signOut(auth)}
+          src={UserImage}
+          alt="user image"
+          className="rounded-full"
+        />
       </div>
     </div>
   );
